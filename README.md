@@ -101,6 +101,17 @@ Note:
 Remember to edit the database connection string in App.config or Web.config according to your SQL Server setup.  
 
 After updating the model, it’s recommended to Build > Rebuild Solution before running the project.
+*****************************************************************************************************
+
+## Third-party Libraries / Üçüncü Taraf Kütüphaneler
+
+Bu proje aşağıdaki üçüncü taraf kütüphaneleri kullanır:
+
+- **Bunifu UI Framework (Free edition)** — UI bileşenleri için. (Sürüm: 5.0.3)  
+  Lisans ve kullanım koşulları için lütfen resmi sayfasına bakın: <Bunifu resmi linki veya NuGet sayfası>.
+
+Not: Tüm üçüncü taraf paketler NuGet üzerinden çekilmekte veya açık/ücretsiz sürümler kullanılmaktadır.
+
 
 
 
