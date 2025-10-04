@@ -1,11 +1,11 @@
+Bilgisayar Programcılığı Bitirme Projem.
+My Computer Programming Graduation Project
 # Library-Management-System-Turkish
 
 Library management system with C# .net
 
-
-
 📚 Library Management System (Türkçe / English)
-
+    
 
 
 🇹🇷 Proje Açıklaması (Türkçe)
