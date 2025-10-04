@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Kutuphane_ProjesiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Emanet_Kitap_Alanlar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmanetKitap_Barkod" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EmanetKitap_Adi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EmanetKitap_Yazar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EmanetKitap_Turu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EmanetKitap_Basimyili" Type="Int32" />
+    <Property Name="EmanetKitap_ID" Type="Int32" />
+    <Property Name="EmanetAlan_Adi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EmanetAlan_Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EmanetAlan_TCno" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="EmanetAlan_Tel" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="EmanetAldiği_Tarih" Type="DateTime" Precision="0" />
+    <Property Name="EmanetAlan_ID" Type="Int32" />
+    <Property Name="EmanetAlan_Soyad" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Kitaplarimiz">
+    <Key>
+      <PropertyRef Name="Kitap_ID" />
+    </Key>
+    <Property Name="Kitap_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kitap_Barkod" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Kitap_Adi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Kitap_yazar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Kitap_Turu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Kitap_Konusu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Kitap_Yayinevi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Kitap_basimyili" Type="Double" />
+    <Property Name="Kitap_Adet" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Kutuphane_Uye_listesi">
+    <Key>
+      <PropertyRef Name="Uye_ID" />
+    </Key>
+    <Property Name="Uye_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Uye_Adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Uye_Soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Uye_Tc" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Uye_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Uye_telefon" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Uye_Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Uye_Borc" Type="Int32" />
+    <Property Name="Uye_ToplamOkunan" Type="Int32" />
+    <Property Name="Uye_Yetki" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Personel_Listesi">
+    <Key>
+      <PropertyRef Name="Personel_ID" />
+    </Key>
+    <Property Name="Personel_ID" Type="Int32" Nullable="false" />
+    <Property Name="Personel_Adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Personel_Soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Personel_Tc" Type="Int32" />
+    <Property Name="Personel_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Personel_Telefon" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityContainer Name="Kutuphane_ProjesiEntities5" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Emanet_Kitap_Alanlar" EntityType="Self.Emanet_Kitap_Alanlar" />
+    <EntitySet Name="Kitaplarimiz" EntityType="Self.Kitaplarimiz" />
+    <EntitySet Name="Kutuphane_Uye_listesi" EntityType="Self.Kutuphane_Uye_listesi" />
+    <EntitySet Name="Personel_Listesi" EntityType="Self.Personel_Listesi" />
+  </EntityContainer>
+</Schema>

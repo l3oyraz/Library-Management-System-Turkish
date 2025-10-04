@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KUTUPHANE_PROJESİModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="EmanetAlan_Uyeler">
+    <Key>
+      <PropertyRef Name="EmanetK_ID" />
+    </Key>
+    <Property Name="EmanetK_ID" Type="int" Nullable="false" />
+    <Property Name="Emanet_Alan_ad" Type="varchar" MaxLength="50" />
+    <Property Name="Emanet_Alan_Tel" Type="int" />
+    <Property Name="Emanet_Alan_Tc" Type="int" />
+    <Property Name="Emanet_Alan_Eposta" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="Kitaplar">
+    <Key>
+      <PropertyRef Name="Kitap ID" />
+    </Key>
+    <Property Name="Kitap ID" Type="int" Nullable="false" />
+    <Property Name="Kitap Adı" Type="varchar" MaxLength="50" />
+    <Property Name="Kitap Türü" Type="varchar" MaxLength="50" />
+    <Property Name="Kitap Yazar" Type="varchar" MaxLength="50" />
+    <Property Name="Basım Yılı" Type="int" />
+    <Property Name="Kitap Adeti" Type="int" />
+  </EntityType>
+  <EntityType Name="Kullanicilar_Yetkililer">
+    <Key>
+      <PropertyRef Name="Kullanici_ID" />
+    </Key>
+    <Property Name="Kullanici_ID" Type="int" Nullable="false" />
+    <Property Name="Kullanici_Adi" Type="varchar" MaxLength="50" />
+    <Property Name="Sifre" Type="varchar" MaxLength="50" />
+    <Property Name="Kullanici_Tel" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Uye_Kayit">
+    <Key>
+      <PropertyRef Name="Uye ID" />
+    </Key>
+    <Property Name="Uye ID" Type="int" Nullable="false" />
+    <Property Name="Sifre" Type="int" />
+    <Property Name="Uye Ismi" Type="varchar" MaxLength="50" />
+    <Property Name="Cep No" Type="int" />
+    <Property Name="Uye_Tc" Type="int" />
+    <Property Name="Dogum Tarihi" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="KUTUPHANE_PROJESİModelStoreContainer">
+    <EntitySet Name="EmanetAlan_Uyeler" EntityType="Self.EmanetAlan_Uyeler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kitaplar" EntityType="Self.Kitaplar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kullanicilar_Yetkililer" EntityType="Self.Kullanicilar_Yetkililer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Uye_Kayit" EntityType="Self.Uye_Kayit" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

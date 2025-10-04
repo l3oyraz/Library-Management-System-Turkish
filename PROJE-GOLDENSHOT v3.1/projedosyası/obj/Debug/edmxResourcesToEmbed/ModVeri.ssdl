@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Kutuphane_ProjesiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Emanet_Kitap_Alanlar">
+    <Key>
+      <PropertyRef Name="EmanetKitap_Barkod" />
+    </Key>
+    <Property Name="EmanetKitap_Barkod" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="EmanetKitap_Adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmanetKitap_Yazar" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmanetKitap_Turu" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmanetKitap_Basimyili" Type="int" />
+    <Property Name="EmanetAlan_Adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmanetAlan_Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmanetAlan_TCno" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="EmanetAlan_Tel" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="EmanetAldiği_Tarih" Type="date" />
+  </EntityType>
+  <EntityType Name="Kitaplarimiz">
+    <Key>
+      <PropertyRef Name="Kitap_Barkod" />
+    </Key>
+    <Property Name="Kitap_Barkod" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Kitap_Adi" Type="nvarchar" MaxLength="255" />
+    <Property Name="Kitap_yazar" Type="nvarchar" MaxLength="255" />
+    <Property Name="Kitap_Turu" Type="nvarchar" MaxLength="255" />
+    <Property Name="Kitap_Konusu" Type="nvarchar" MaxLength="255" />
+    <Property Name="Kitap_Yayinevi" Type="nvarchar" MaxLength="255" />
+    <Property Name="Kitap_basimyili" Type="float" />
+    <Property Name="Kitap_Adet" Type="float" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Kutuphane_Projesi.dbo.Kutuphane_Uye_listesi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Kutuphane_Uye_listesi">
+    <Key>
+      <PropertyRef Name="Uye_ID" />
+    </Key>
+    <Property Name="Uye_ID" Type="int" Nullable="false" />
+    <Property Name="Uye_Adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Uye_Soyadi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Uye_Tc" Type="int" />
+    <Property Name="Uye_Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Uye_telefon" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Uye_Sifre" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Personel_Listesi">
+    <Key>
+      <PropertyRef Name="Personel_ID" />
+    </Key>
+    <Property Name="Personel_ID" Type="int" Nullable="false" />
+    <Property Name="Personel_Adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Personel_Soyadi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Personel_Tc" Type="int" />
+    <Property Name="Personel_Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Personel_Telefon" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityContainer Name="Kutuphane_ProjesiModelStoreContainer">
+    <EntitySet Name="Emanet_Kitap_Alanlar" EntityType="Self.Emanet_Kitap_Alanlar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kitaplarimiz" EntityType="Self.Kitaplarimiz" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Personel_Listesi" EntityType="Self.Personel_Listesi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kutuphane_Uye_listesi" EntityType="Self.Kutuphane_Uye_listesi" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Kutuphane_Uye_listesi].[Uye_ID] AS [Uye_ID], 
+    [Kutuphane_Uye_listesi].[Uye_Adi] AS [Uye_Adi], 
+    [Kutuphane_Uye_listesi].[Uye_Soyadi] AS [Uye_Soyadi], 
+    [Kutuphane_Uye_listesi].[Uye_Tc] AS [Uye_Tc], 
+    [Kutuphane_Uye_listesi].[Uye_Email] AS [Uye_Email], 
+    [Kutuphane_Uye_listesi].[Uye_telefon] AS [Uye_telefon], 
+    [Kutuphane_Uye_listesi].[Uye_Sifre] AS [Uye_Sifre]
+    FROM [dbo].[Kutuphane_Uye_listesi] AS [Kutuphane_Uye_listesi]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Kutuphane_ProjesiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Emanet_Kitap_Alanlar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmanetKitap_Barkod" Type="nvarchar" MaxLength="255" />
+          <Property Name="EmanetKitap_Adi" Type="nvarchar" MaxLength="255" />
+          <Property Name="EmanetKitap_Yazar" Type="nvarchar" MaxLength="255" />
+          <Property Name="EmanetKitap_Turu" Type="nvarchar" MaxLength="255" />
+          <Property Name="EmanetKitap_Basimyili" Type="int" />
+          <Property Name="EmanetKitap_ID" Type="int" />
+          <Property Name="EmanetAlan_Adi" Type="nvarchar" MaxLength="255" />
+          <Property Name="EmanetAlan_Email" Type="nvarchar" MaxLength="255" />
+          <Property Name="EmanetAlan_TCno" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="EmanetAlan_Tel" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="EmanetAldiği_Tarih" Type="date" />
+          <Property Name="EmanetAlan_ID" Type="int" />
+          <Property Name="EmanetAlan_Soyad" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Kitaplarimiz">
+          <Key>
+            <PropertyRef Name="Kitap_ID" />
+          </Key>
+          <Property Name="Kitap_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kitap_Barkod" Type="nvarchar" MaxLength="255" />
+          <Property Name="Kitap_Adi" Type="nvarchar" MaxLength="255" />
+          <Property Name="Kitap_yazar" Type="nvarchar" MaxLength="255" />
+          <Property Name="Kitap_Turu" Type="nvarchar" MaxLength="255" />
+          <Property Name="Kitap_Konusu" Type="nvarchar" MaxLength="255" />
+          <Property Name="Kitap_Yayinevi" Type="nvarchar" MaxLength="255" />
+          <Property Name="Kitap_basimyili" Type="float" />
+          <Property Name="Kitap_Adet" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Kutuphane_Projesi.dbo.KitaplarimizY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="KitaplarimizY">
+          <Property Name="Kitap_Barkod" Type="nvarchar" MaxLength="255" />
+          <Property Name="Kitap_Adi" Type="nvarchar" MaxLength="255" />
+          <Property Name="Kitap_yazar" Type="nvarchar" MaxLength="255" />
+          <Property Name="Kitap_basimyili" Type="float" />
+          <Property Name="Kitap_Turu" Type="nvarchar" MaxLength="255" />
+          <Property Name="Kitap_Konusu" Type="nvarchar" MaxLength="255" />
+          <Property Name="Kitap_Yayinevi" Type="nvarchar" MaxLength="255" />
+          <Property Name="Kitap_Adet" Type="float" />
+        </EntityType>-->
+        <EntityType Name="Kutuphane_Uye_listesi">
+          <Key>
+            <PropertyRef Name="Uye_ID" />
+          </Key>
+          <Property Name="Uye_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Uye_Adi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Uye_Soyadi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Uye_Tc" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Uye_Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Uye_telefon" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Uye_Sifre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Uye_Borc" Type="int" />
+          <Property Name="Uye_ToplamOkunan" Type="int" />
+          <Property Name="Uye_Yetki" Type="nchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="Personel_Listesi">
+          <Key>
+            <PropertyRef Name="Personel_ID" />
+          </Key>
+          <Property Name="Personel_ID" Type="int" Nullable="false" />
+          <Property Name="Personel_Adi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Personel_Soyadi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Personel_Tc" Type="int" />
+          <Property Name="Personel_Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Personel_Telefon" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityContainer Name="Kutuphane_ProjesiModelStoreContainer">
+          <EntitySet Name="Emanet_Kitap_Alanlar" EntityType="Self.Emanet_Kitap_Alanlar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kitaplarimiz" EntityType="Self.Kitaplarimiz" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kutuphane_Uye_listesi" EntityType="Self.Kutuphane_Uye_listesi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personel_Listesi" EntityType="Self.Personel_Listesi" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Kutuphane_ProjesiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Emanet_Kitap_Alanlar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmanetKitap_Barkod" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EmanetKitap_Adi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EmanetKitap_Yazar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EmanetKitap_Turu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EmanetKitap_Basimyili" Type="Int32" />
+          <Property Name="EmanetKitap_ID" Type="Int32" />
+          <Property Name="EmanetAlan_Adi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EmanetAlan_Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EmanetAlan_TCno" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmanetAlan_Tel" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmanetAldiği_Tarih" Type="DateTime" Precision="0" />
+          <Property Name="EmanetAlan_ID" Type="Int32" />
+          <Property Name="EmanetAlan_Soyad" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Kitaplarimiz">
+          <Key>
+            <PropertyRef Name="Kitap_ID" />
+          </Key>
+          <Property Name="Kitap_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kitap_Barkod" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Kitap_Adi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Kitap_yazar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Kitap_Turu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Kitap_Konusu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Kitap_Yayinevi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Kitap_basimyili" Type="Double" />
+          <Property Name="Kitap_Adet" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Kutuphane_Uye_listesi">
+          <Key>
+            <PropertyRef Name="Uye_ID" />
+          </Key>
+          <Property Name="Uye_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Uye_Adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Uye_Soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Uye_Tc" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Uye_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Uye_telefon" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Uye_Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Uye_Borc" Type="Int32" />
+          <Property Name="Uye_ToplamOkunan" Type="Int32" />
+          <Property Name="Uye_Yetki" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Personel_Listesi">
+          <Key>
+            <PropertyRef Name="Personel_ID" />
+          </Key>
+          <Property Name="Personel_ID" Type="Int32" Nullable="false" />
+          <Property Name="Personel_Adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Personel_Soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Personel_Tc" Type="Int32" />
+          <Property Name="Personel_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Personel_Telefon" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityContainer Name="Kutuphane_ProjesiEntities5" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Emanet_Kitap_Alanlar" EntityType="Self.Emanet_Kitap_Alanlar" />
+          <EntitySet Name="Kitaplarimiz" EntityType="Self.Kitaplarimiz" />
+          <EntitySet Name="Kutuphane_Uye_listesi" EntityType="Self.Kutuphane_Uye_listesi" />
+          <EntitySet Name="Personel_Listesi" EntityType="Self.Personel_Listesi" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Kutuphane_ProjesiModelStoreContainer" CdmEntityContainer="Kutuphane_ProjesiEntities5">
+          <EntitySetMapping Name="Emanet_Kitap_Alanlar">
+            <EntityTypeMapping TypeName="Kutuphane_ProjesiModel.Emanet_Kitap_Alanlar">
+              <MappingFragment StoreEntitySet="Emanet_Kitap_Alanlar">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="EmanetKitap_Barkod" ColumnName="EmanetKitap_Barkod" />
+                <ScalarProperty Name="EmanetKitap_Adi" ColumnName="EmanetKitap_Adi" />
+                <ScalarProperty Name="EmanetKitap_Yazar" ColumnName="EmanetKitap_Yazar" />
+                <ScalarProperty Name="EmanetKitap_Turu" ColumnName="EmanetKitap_Turu" />
+                <ScalarProperty Name="EmanetKitap_Basimyili" ColumnName="EmanetKitap_Basimyili" />
+                <ScalarProperty Name="EmanetKitap_ID" ColumnName="EmanetKitap_ID" />
+                <ScalarProperty Name="EmanetAlan_Adi" ColumnName="EmanetAlan_Adi" />
+                <ScalarProperty Name="EmanetAlan_Email" ColumnName="EmanetAlan_Email" />
+                <ScalarProperty Name="EmanetAlan_TCno" ColumnName="EmanetAlan_TCno" />
+                <ScalarProperty Name="EmanetAlan_Tel" ColumnName="EmanetAlan_Tel" />
+                <ScalarProperty Name="EmanetAldiği_Tarih" ColumnName="EmanetAldiği_Tarih" />
+                <ScalarProperty Name="EmanetAlan_ID" ColumnName="EmanetAlan_ID" />
+                <ScalarProperty Name="EmanetAlan_Soyad" ColumnName="EmanetAlan_Soyad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kitaplarimiz">
+            <EntityTypeMapping TypeName="Kutuphane_ProjesiModel.Kitaplarimiz">
+              <MappingFragment StoreEntitySet="Kitaplarimiz">
+                <ScalarProperty Name="Kitap_ID" ColumnName="Kitap_ID" />
+                <ScalarProperty Name="Kitap_Barkod" ColumnName="Kitap_Barkod" />
+                <ScalarProperty Name="Kitap_Adi" ColumnName="Kitap_Adi" />
+                <ScalarProperty Name="Kitap_yazar" ColumnName="Kitap_yazar" />
+                <ScalarProperty Name="Kitap_Turu" ColumnName="Kitap_Turu" />
+                <ScalarProperty Name="Kitap_Konusu" ColumnName="Kitap_Konusu" />
+                <ScalarProperty Name="Kitap_Yayinevi" ColumnName="Kitap_Yayinevi" />
+                <ScalarProperty Name="Kitap_basimyili" ColumnName="Kitap_basimyili" />
+                <ScalarProperty Name="Kitap_Adet" ColumnName="Kitap_Adet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kutuphane_Uye_listesi">
+            <EntityTypeMapping TypeName="Kutuphane_ProjesiModel.Kutuphane_Uye_listesi">
+              <MappingFragment StoreEntitySet="Kutuphane_Uye_listesi">
+                <ScalarProperty Name="Uye_Yetki" ColumnName="Uye_Yetki" />
+                <ScalarProperty Name="Uye_ToplamOkunan" ColumnName="Uye_ToplamOkunan" />
+                <ScalarProperty Name="Uye_Borc" ColumnName="Uye_Borc" />
+                <ScalarProperty Name="Uye_ID" ColumnName="Uye_ID" />
+                <ScalarProperty Name="Uye_Adi" ColumnName="Uye_Adi" />
+                <ScalarProperty Name="Uye_Soyadi" ColumnName="Uye_Soyadi" />
+                <ScalarProperty Name="Uye_Tc" ColumnName="Uye_Tc" />
+                <ScalarProperty Name="Uye_Email" ColumnName="Uye_Email" />
+                <ScalarProperty Name="Uye_telefon" ColumnName="Uye_telefon" />
+                <ScalarProperty Name="Uye_Sifre" ColumnName="Uye_Sifre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personel_Listesi">
+            <EntityTypeMapping TypeName="Kutuphane_ProjesiModel.Personel_Listesi">
+              <MappingFragment StoreEntitySet="Personel_Listesi">
+                <ScalarProperty Name="Personel_ID" ColumnName="Personel_ID" />
+                <ScalarProperty Name="Personel_Adi" ColumnName="Personel_Adi" />
+                <ScalarProperty Name="Personel_Soyadi" ColumnName="Personel_Soyadi" />
+                <ScalarProperty Name="Personel_Tc" ColumnName="Personel_Tc" />
+                <ScalarProperty Name="Personel_Email" ColumnName="Personel_Email" />
+                <ScalarProperty Name="Personel_Telefon" ColumnName="Personel_Telefon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KUTUPHANE_PROJESİModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="EmanetAlan_Uyeler">
+    <Key>
+      <PropertyRef Name="EmanetK_ID" />
+    </Key>
+    <Property Name="EmanetK_ID" Type="Int32" Nullable="false" />
+    <Property Name="Emanet_Alan_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Emanet_Alan_Tel" Type="Int32" />
+    <Property Name="Emanet_Alan_Tc" Type="Int32" />
+    <Property Name="Emanet_Alan_Eposta" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Kitaplar">
+    <Key>
+      <PropertyRef Name="Kitap_ID" />
+    </Key>
+    <Property Name="Kitap_ID" Type="Int32" Nullable="false" />
+    <Property Name="Kitap_Adı" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Kitap_Türü" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Kitap_Yazar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Basım_Yılı" Type="Int32" />
+    <Property Name="Kitap_Adeti" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Kullanicilar_Yetkililer">
+    <Key>
+      <PropertyRef Name="Kullanici_ID" />
+    </Key>
+    <Property Name="Kullanici_ID" Type="Int32" Nullable="false" />
+    <Property Name="Kullanici_Adi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Kullanici_Tel" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Uye_Kayit">
+    <Key>
+      <PropertyRef Name="Uye_ID" />
+    </Key>
+    <Property Name="Uye_ID" Type="Int32" Nullable="false" />
+    <Property Name="Sifre" Type="Int32" />
+    <Property Name="Uye_Ismi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Cep_No" Type="Int32" />
+    <Property Name="Uye_Tc" Type="Int32" />
+    <Property Name="Dogum_Tarihi" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="KUTUPHANE_PROJESİEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="EmanetAlan_Uyeler" EntityType="Self.EmanetAlan_Uyeler" />
+    <EntitySet Name="Kitaplar" EntityType="Self.Kitaplar" />
+    <EntitySet Name="Kullanicilar_Yetkililer" EntityType="Self.Kullanicilar_Yetkililer" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Uye_Kayit" EntityType="Self.Uye_Kayit" />
+  </EntityContainer>
+</Schema>

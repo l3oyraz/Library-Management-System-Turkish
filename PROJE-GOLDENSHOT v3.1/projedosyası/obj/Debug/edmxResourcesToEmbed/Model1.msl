@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Kutuphane_ProjesiModelStoreContainer" CdmEntityContainer="Kutuphane_ProjesiEntities5">
+    <EntitySetMapping Name="Emanet_Kitap_Alanlar">
+      <EntityTypeMapping TypeName="Kutuphane_ProjesiModel.Emanet_Kitap_Alanlar">
+        <MappingFragment StoreEntitySet="Emanet_Kitap_Alanlar">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EmanetKitap_Barkod" ColumnName="EmanetKitap_Barkod" />
+          <ScalarProperty Name="EmanetKitap_Adi" ColumnName="EmanetKitap_Adi" />
+          <ScalarProperty Name="EmanetKitap_Yazar" ColumnName="EmanetKitap_Yazar" />
+          <ScalarProperty Name="EmanetKitap_Turu" ColumnName="EmanetKitap_Turu" />
+          <ScalarProperty Name="EmanetKitap_Basimyili" ColumnName="EmanetKitap_Basimyili" />
+          <ScalarProperty Name="EmanetKitap_ID" ColumnName="EmanetKitap_ID" />
+          <ScalarProperty Name="EmanetAlan_Adi" ColumnName="EmanetAlan_Adi" />
+          <ScalarProperty Name="EmanetAlan_Email" ColumnName="EmanetAlan_Email" />
+          <ScalarProperty Name="EmanetAlan_TCno" ColumnName="EmanetAlan_TCno" />
+          <ScalarProperty Name="EmanetAlan_Tel" ColumnName="EmanetAlan_Tel" />
+          <ScalarProperty Name="EmanetAldiği_Tarih" ColumnName="EmanetAldiği_Tarih" />
+          <ScalarProperty Name="EmanetAlan_ID" ColumnName="EmanetAlan_ID" />
+          <ScalarProperty Name="EmanetAlan_Soyad" ColumnName="EmanetAlan_Soyad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kitaplarimiz">
+      <EntityTypeMapping TypeName="Kutuphane_ProjesiModel.Kitaplarimiz">
+        <MappingFragment StoreEntitySet="Kitaplarimiz">
+          <ScalarProperty Name="Kitap_ID" ColumnName="Kitap_ID" />
+          <ScalarProperty Name="Kitap_Barkod" ColumnName="Kitap_Barkod" />
+          <ScalarProperty Name="Kitap_Adi" ColumnName="Kitap_Adi" />
+          <ScalarProperty Name="Kitap_yazar" ColumnName="Kitap_yazar" />
+          <ScalarProperty Name="Kitap_Turu" ColumnName="Kitap_Turu" />
+          <ScalarProperty Name="Kitap_Konusu" ColumnName="Kitap_Konusu" />
+          <ScalarProperty Name="Kitap_Yayinevi" ColumnName="Kitap_Yayinevi" />
+          <ScalarProperty Name="Kitap_basimyili" ColumnName="Kitap_basimyili" />
+          <ScalarProperty Name="Kitap_Adet" ColumnName="Kitap_Adet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kutuphane_Uye_listesi">
+      <EntityTypeMapping TypeName="Kutuphane_ProjesiModel.Kutuphane_Uye_listesi">
+        <MappingFragment StoreEntitySet="Kutuphane_Uye_listesi">
+          <ScalarProperty Name="Uye_Yetki" ColumnName="Uye_Yetki" />
+          <ScalarProperty Name="Uye_ToplamOkunan" ColumnName="Uye_ToplamOkunan" />
+          <ScalarProperty Name="Uye_Borc" ColumnName="Uye_Borc" />
+          <ScalarProperty Name="Uye_ID" ColumnName="Uye_ID" />
+          <ScalarProperty Name="Uye_Adi" ColumnName="Uye_Adi" />
+          <ScalarProperty Name="Uye_Soyadi" ColumnName="Uye_Soyadi" />
+          <ScalarProperty Name="Uye_Tc" ColumnName="Uye_Tc" />
+          <ScalarProperty Name="Uye_Email" ColumnName="Uye_Email" />
+          <ScalarProperty Name="Uye_telefon" ColumnName="Uye_telefon" />
+          <ScalarProperty Name="Uye_Sifre" ColumnName="Uye_Sifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personel_Listesi">
+      <EntityTypeMapping TypeName="Kutuphane_ProjesiModel.Personel_Listesi">
+        <MappingFragment StoreEntitySet="Personel_Listesi">
+          <ScalarProperty Name="Personel_ID" ColumnName="Personel_ID" />
+          <ScalarProperty Name="Personel_Adi" ColumnName="Personel_Adi" />
+          <ScalarProperty Name="Personel_Soyadi" ColumnName="Personel_Soyadi" />
+          <ScalarProperty Name="Personel_Tc" ColumnName="Personel_Tc" />
+          <ScalarProperty Name="Personel_Email" ColumnName="Personel_Email" />
+          <ScalarProperty Name="Personel_Telefon" ColumnName="Personel_Telefon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

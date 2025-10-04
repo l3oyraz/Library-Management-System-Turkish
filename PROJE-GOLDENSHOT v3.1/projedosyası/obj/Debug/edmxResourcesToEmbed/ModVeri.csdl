@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Kutuphane_ProjesiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Kutuphane_ProjesiEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Personel_Listesi" EntityType="Kutuphane_ProjesiModel.Personel_Listesi" />
+    <EntitySet Name="Kutuphane_Uye_listesi" EntityType="Kutuphane_ProjesiModel.Kutuphane_Uye_listesi" />
+    <EntitySet Name="Kitaplarimiz" EntityType="Kutuphane_ProjesiModel.Kitaplarimiz" />
+    <EntitySet Name="Emanet_Kitap_Alanlar" EntityType="Kutuphane_ProjesiModel.Emanet_Kitap_Alanlar" />
+  </EntityContainer>
+  <EntityType Name="Personel_Listesi">
+    <Key>
+      <PropertyRef Name="Personel_ID" />
+    </Key>
+    <Property Name="Personel_ID" Type="Int32" Nullable="false" />
+    <Property Name="Personel_Adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Personel_Soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Personel_Tc" Type="Int32" />
+    <Property Name="Personel_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Personel_Telefon" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Kutuphane_Uye_listesi">
+    <Key>
+      <PropertyRef Name="Uye_ID" />
+    </Key>
+    <Property Name="Uye_ID" Type="Int32" Nullable="false" />
+    <Property Name="Uye_Adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Uye_Soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Uye_Tc" Type="Int32" />
+    <Property Name="Uye_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Uye_telefon" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Uye_Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Kitaplarimiz">
+    <Key>
+      <PropertyRef Name="Kitap_Barkod" />
+    </Key>
+    <Property Name="Kitap_Barkod" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Kitap_Adi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Kitap_yazar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Kitap_Turu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Kitap_Konusu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Kitap_Yayinevi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Kitap_basimyili" Type="Double" />
+    <Property Name="Kitap_Adet" Type="Double" />
+  </EntityType>
+  <EntityType Name="Emanet_Kitap_Alanlar">
+    <Key>
+      <PropertyRef Name="EmanetKitap_Barkod" />
+    </Key>
+    <Property Name="EmanetKitap_Barkod" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EmanetKitap_Adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmanetKitap_Yazar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmanetKitap_Turu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmanetKitap_Basimyili" Type="Int32" />
+    <Property Name="EmanetAlan_Adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmanetAlan_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmanetAlan_TCno" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="EmanetAlan_Tel" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="EmanetAldiği_Tarih" Type="DateTime" Precision="0" />
+  </EntityType>
+</Schema>
